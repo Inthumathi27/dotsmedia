@@ -19,3 +19,4 @@ Color borderColor = Color(0xffc7c7c7);
 Color textColor = Color(0xffaaaaaa);
 Color iconColor = Color(0xffc5c4c9);
 Color loginWhiteColor = Color(0xffcccbcb);
+Color eventTextColor = Color(0xff666666);
