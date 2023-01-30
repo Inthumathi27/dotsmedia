@@ -1,4 +1,5 @@
 
+import 'package:demo_project/UI%20Screen/leavemanagment/leavepolicy.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -202,15 +203,15 @@ class _LayOutScreenState extends State<LayOutScreen>
               controller: tabController,
               children: const [
                 dashboardScreen(),
-                applyLeave(),
+                LeaveSummary(),
                 dashboardScreen(),
-                applyLeave(),
                 dashboardScreen(),
-                applyLeave(),
                 dashboardScreen(),
-                applyLeave(),
                 dashboardScreen(),
-                applyLeave(),
+                dashboardScreen(),
+                dashboardScreen(),
+                dashboardScreen(),
+                dashboardScreen(),
                 dashboardScreen(),
               ],
             ),
@@ -297,6 +298,7 @@ class _LayOutScreenState extends State<LayOutScreen>
                               type:
                               PageTransitionType.rightToLeft,
                               child:mobileCalendar()));
+
                     },
                   ),
                   SizedBox(height: 5,),
@@ -328,7 +330,7 @@ class _LayOutScreenState extends State<LayOutScreen>
                       ],
                     ),
                     onTap: () {
-                      Navigator.pop(context);
+
                     },
                   ),
                   SizedBox(height: 5,),
@@ -402,32 +404,108 @@ class _LayOutScreenState extends State<LayOutScreen>
                     color: sideMenuColor.withOpacity(0.1),
                   ),
                   SizedBox(height: 5,),
-                  ListTile(
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Image(
-                              image: const AssetImage(
-                                'assets/sidemenu/leavemanagment.png',
-                              ),
+                  // ListTile(
+                  //   title: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       Row(
+                  //         children: [
+                  //           Image(
+                  //             image: const AssetImage(
+                  //               'assets/sidemenu/leavemanagment.png',
+                  //             ),
+                  //           ),
+                  //           widthspace,
+                  //           SmallText(
+                  //               text: MyStrings.hr,
+                  //               size: 15,
+                  //               color: blackColor)
+                  //         ],
+                  //       ),
+                  //       Icon(Icons.keyboard_arrow_right)
+                  //     ],
+                  //   ),
+                  //   onTap: () {
+                  //     Navigator.pop(context);
+                  //   },
+                  // ),
+                   Theme(
+                     data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                     child: ExpansionTile(
+                       iconColor: primaryColor,
+                      initiallyExpanded: false,
+                      title: Row(
+                        children: [
+                          Image(
+                            image: const AssetImage(
+                              'assets/sidemenu/leavemanagment.png',
                             ),
-                            widthspace,
-                            SmallText(
-                                text: MyStrings.hr,
-                                size: 15,
-                                color: blackColor)
-                          ],
+                          ),
+                          widthspace,
+                          SmallText(
+                              text: MyStrings.hr,
+                              size: 15,
+                              color: blackColor)
+                        ],
+                      ),
+                      children: <Widget>[
+                        Container(
+                          height: 1,
+                          width: MediaQuery.of(context).size.width,
+                          color: sideMenuColor.withOpacity(0.1),
                         ),
-                        Icon(Icons.keyboard_arrow_right)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0,left: 30,bottom: 15),
+                          child: InkWell(
+                              onTap: (){
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type:
+                                        PageTransitionType.rightToLeft,
+                                        child:   const LeaveSummary()));
+                              },
+                              child:  Row(
+                                children: [
+                                 Icon(Icons.arrow_right_sharp),
+                                  SmallText(
+                                      text: MyStrings.leaveManagement,
+                                      size: 15,
+                                      fontWeight: FontWeight.w500,
+                                      color: blackColor),
+                                ],
+                              )),
+                        ),
+                        Container(
+                          height: 1,
+                          width: MediaQuery.of(context).size.width,
+                          color: sideMenuColor.withOpacity(0.1),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0,left: 30,bottom: 15),
+                          child: InkWell(
+                              onTap: (){
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type:
+                                        PageTransitionType.rightToLeft,
+                                        child:   const LeavePolicy()));
+                              },
+                              child:  Row(
+                                children: [
+                                 Icon(Icons.arrow_right_sharp),
+                                  SmallText(
+                                      text: MyStrings.leavePolicy,
+                                      size: 15,
+                                      fontWeight: FontWeight.w500,
+                                      color: blackColor),
+                                ],
+                              )),
+                        ),
                       ],
-                    ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
                   ),
-                  SizedBox(height: 5,),
+                   ),
                   Container(
                     height: 1,
                     width: MediaQuery.of(context).size.width,
@@ -974,8 +1052,8 @@ class _LayOutScreenState extends State<LayOutScreen>
                   ResponsiveScreens.isTabletView(context)
                   ? Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Column(
-                children: [
+                    Column(
+                      children: [
                       Image(
                         image: const AssetImage(
                           'assets/sidemenu/calendar.png',
@@ -1016,6 +1094,7 @@ class _LayOutScreenState extends State<LayOutScreen>
             ),
           ),
         ),
+
         heightspace,
         InkWell(
           onTap: () {

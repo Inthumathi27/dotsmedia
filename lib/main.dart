@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          backgroundColor:  primaryColor,),
+          backgroundColor:  sideMenuColor,),
         primaryColor: primaryColor, textSelectionTheme: TextSelectionThemeData(cursorColor: primaryColor),
       ),
       home: SplashScreen(),
