@@ -59,6 +59,7 @@ class _LeaveSummaryState extends State<LeaveSummary> {
                 size: 14,
                 textAlign: TextAlign.center,
               )),
+
           DataColumn(
               label: SmallText(
                 text: "Avail",

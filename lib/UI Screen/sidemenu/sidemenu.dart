@@ -9,7 +9,7 @@ import '../../utils/smalltext.dart';
 import '../../utils/strings.dart';
 import '../calendar/mobilecalendar.dart';
 import '../dashboardscreen/dashboard.dart';
-import '../leavemanagment/leave.dart';
+import '../leavemanagment/leavesummary.dart';
 
 class LayOutScreen extends StatefulWidget {
   const LayOutScreen({Key? key}) : super(key: key);
@@ -454,6 +454,33 @@ class _LayOutScreenState extends State<LayOutScreen>
                           width: MediaQuery.of(context).size.width,
                           color: sideMenuColor.withOpacity(0.1),
                         ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(top: 15.0,left: 30,bottom: 15),
+                        //   child: InkWell(
+                        //       onTap: (){
+                        //         Navigator.push(
+                        //             context,
+                        //             PageTransition(
+                        //                 type:
+                        //                 PageTransitionType.rightToLeft,
+                        //                 child:   const LeaveSummary()));
+                        //       },
+                        //       child:  Row(
+                        //         children: [
+                        //          Icon(Icons.arrow_right_sharp),
+                        //           SmallText(
+                        //               text: MyStrings.leaveManagement,
+                        //               size: 15,
+                        //               fontWeight: FontWeight.w500,
+                        //               color: blackColor),
+                        //         ],
+                        //       )),
+                        // ),
+                        Container(
+                          height: 1,
+                          width: MediaQuery.of(context).size.width,
+                          color: sideMenuColor.withOpacity(0.1),
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(top: 15.0,left: 30,bottom: 15),
                           child: InkWell(
@@ -469,7 +496,7 @@ class _LayOutScreenState extends State<LayOutScreen>
                                 children: [
                                  Icon(Icons.arrow_right_sharp),
                                   SmallText(
-                                      text: MyStrings.leaveManagement,
+                                      text: MyStrings.leaveSummary,
                                       size: 15,
                                       fontWeight: FontWeight.w500,
                                       color: blackColor),
@@ -494,7 +521,7 @@ class _LayOutScreenState extends State<LayOutScreen>
                               },
                               child:  Row(
                                 children: [
-                                 Icon(Icons.arrow_right_sharp),
+                                  Icon(Icons.arrow_right_sharp),
                                   SmallText(
                                       text: MyStrings.leavePolicy,
                                       size: 15,
